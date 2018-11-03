@@ -2,15 +2,15 @@ var stompit = require('stompit');
  
 var connectOptions = {
   'host': process.env.URL || 'localhost',
-  'port': Q_PORT,
+  'port': process.env.Q_PORT || 61614,
   'connectHeaders':{
     'host': '/',
-    'login': process.env.Q_USER,
-    'passcode': process.env.Q_PASS,
+    'login': process.env.Q_USER || 'admin',
+    'passcode': process.env.Q_PASS || 'admin',
     'heart-beat': '5000,5000'
   }
 };
- 
+ console.log('connectOptions' ,connectOptions)
 stompit.connect(connectOptions, function(error, client) {
   
   if (error) {
