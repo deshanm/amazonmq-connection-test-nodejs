@@ -3,6 +3,7 @@ var stompit = require('stompit');
 var connectOptions = {
   'host': process.env.URL || 'localhost',
   'port': process.env.Q_PORT || 61614,
+  ssl: true,
   'connectHeaders':{
     'host': '/',
     'login': process.env.Q_USER || 'admin',
